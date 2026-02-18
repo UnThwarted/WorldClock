@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>World Clock Dashboard</title>
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    background: #f0f2f5; 
+    padding: 20px; 
+    color: #222;
+  }
+  h2 { margin-bottom: 20px; }
+  .clock-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 350px;
+  }
+  .clock-box {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .time {
+    font-size: 32px;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<h2>🌍 World Clock Dashboard</h2>
+
+<div class="clock-container">
+
+  <div class="clock-box">
+    <div class="title">🇬🇧 United Kingdom (UK)</div>
+    <div id="uk" class="time"></div>
+  </div>
+
+  <div class="clock-box">
+    <div class="title">🇰🇪 Nairobi, Kenya</div>
+    <div id="nairobi" class="time"></div>
+  </div>
+
+  <div class="clock-box">
+    <div class="title">🇧🇸 The Bahamas</div>
+    <div id="bahamas" class="time"></div>
+  </div>
+
+</div>
+
+<script>
+function updateClocks() {
+  document.getElementById("uk").textContent =
+    new Date().toLocaleTimeString("en-GB", { 
+      timeZone: "Europe/London", 
+      hour12: false 
+    });
+
+  document.getElementById("nairobi").textContent =
+    new Date().toLocaleTimeString("en-GB", { 
+      timeZone: "Africa/Nairobi", 
+      hour12: false 
+    });
+
+  document.getElementById("bahamas").textContent =
+    new Date().toLocaleTimeString("en-GB", { 
+      timeZone: "America/Nassau", 
+      hour12: false 
+    });
+}
+
+setInterval(updateClocks, 1000);
+updateClocks();
+</script>
+
+</body>
+</html>
