@@ -46,8 +46,8 @@
   </div>
 
   <div class="clock-box">
-    <div class="title">🇰🇪 Nairobi, Kenya</div>
-    <div id="nairobi" class="time"></div>
+    <div class="title">🇰🇪 Paris, France</div>
+    <div id="paris" class="time"></div>
   </div>
 
   <div class="clock-box">
@@ -65,9 +65,9 @@ function updateClocks() {
       hour12: false 
     });
 
-  document.getElementById("nairobi").textContent =
+  document.getElementById("paris").textContent =
     new Date().toLocaleTimeString("en-GB", { 
-      timeZone: "Africa/Nairobi", 
+      timeZone: "Europe/Paris", 
       hour12: false 
     });
 
